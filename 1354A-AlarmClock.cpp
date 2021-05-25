@@ -9,26 +9,9 @@ using namespace std;
 typedef long long ll;
 int main()
 {
-    ll t;
-    cin>>t;
-    while(t--)
-    {
-        ll a,b,c,d,ans=0;
-        cin>>a>>b>>c>>d;
-        if(b>=a)
-        {
-            ans=b;
-        }
-        else if(c<=d)
-        {
-            ans=-1;
-        }
-        else
-        {
-            a-=b;
-            ans=b+((a+c-d-1)/(c-d)*c);
-        }
-        cout<<ans<<endl;
-    }
-}
+    double x1,x2,y1,y2,p,q,d;
+    cin>>x1>>y1>>x2>>y2;
+    d=sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+    printf("%.4lf\n",d);
 
+}
