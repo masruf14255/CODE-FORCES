@@ -9,39 +9,30 @@ using namespace std;
 typedef long long ll;
 int main()
 {
-    int ar[26];
-    int ch=0,bi=0,ba=0,t,a=1,b=2,c=3,ans=0;
+    int t,c=1,ma=0;
     cin>>t;
+    int h[t+1],m[t+1];
     for(int i=1; i<=t; i++)
     {
-        cin>>ar[i];
-        if(i==a)
-        {
-            ch+=ar[i];
-            a+=3;
-        }
-        else if(i==b)
-        {
-            bi+=ar[i];
-            b+=3;
-        }
-        else if(i==c)
-        {
-            ba+=ar[i];
-            c+=3;
-        }
+        cin>>h[i];
+        cin>>m[i];
     }
-    ans=max(ch,max(bi,ba));
-    if(ans==ch)
+    for(int i=1; i<=t; i++)
     {
-        cout<<"chest\n";
+        if(h[i]==h[++i])
+        {
+            if(m[i]==m[++i])
+            {
+                c++;
+            }
+            else{
+                if(ma<c)
+                {
+                    ma=c;
+                    c=0;
+                }
+            }
+        }
     }
-    else if(ans==bi)
-    {
-        cout<<"biceps\n";
-    }
-    else
-    {
-        cout<<"back\n";
-    }
+    cout<<ma<<endl;
 }
