@@ -9,9 +9,37 @@ using namespace std;
 typedef long long ll;
 int main()
 {
-    int n,k,l,c,d,p,nl,np;
-    cin>>n>>k>>l>>
-    c>>d>>p>>nl>>np;
-    cout<<min(min(k*l/nl,c*d),p/np)/n<<endl;
+    string s;
+    cin>>s;
+
+    int freq[26]={0};
+    /*for(int i=0; i<26; i++)
+    {
+        freq[i]=0;
+    }*/
+    for(int i=0; i<s.size(); i++)
+    {
+        freq[s[i]-'a']++;
+    }
+    //char ans='a';
+    //int maxf=0;
+
+    for(int i=0; i<26; i++)
+    {
+        char ans=i+'a';
+        cout<<freq[i]<<" "<<ans<<endl;
+    }
+}
+
+
+
+int getbit(int n, int ppos)
+{
+    return ((n&(1<<pos))!=0);
+}
+
+int main()
+{
+    cout<<getbit(5,2)<<endl;
     return 0;
 }
