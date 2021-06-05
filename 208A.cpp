@@ -7,26 +7,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
+double n,sum,ans;
 int main()
 {
-    string s;
-    int flag=1;
-    cin>>s;
-    for(int i=0;i<s.size(); i++)
+    double t;
+    cin>>t;
+    for(int i=0; i<t; i++)
     {
-        if(s[i]=='W'&&s[i+1]=='U'&&s[i+2]=='B')
-        {
-            i+=2;
-            if(!flag)
-            {
-                cout<<" ";
-            }continue;
-        }
-        else
-        {
-            flag=0;
-            cout<<s[i];
-        }
+        cin>>n;
+        sum+=n;
     }
-    return 0;
+    ans=sum/t;
+    cout<<ans<<endl;
 }
